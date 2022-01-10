@@ -13,6 +13,7 @@ const App = () => {
 //add new task
 const addTask = (task) => {
   console.log(task);
+  setTasks([...tasks, task]);
 }
 
 
