@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from "react"
 
 const AddTask = ({ onAdd }) => {
@@ -6,7 +7,7 @@ const AddTask = ({ onAdd }) => {
     const [reminder, setReminder] = useState(false);
 
     const onSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         if (!text) {
             alert('Please enter a task');
             return;
@@ -26,7 +27,7 @@ const AddTask = ({ onAdd }) => {
                 <input type='text' id='text' name='text' placeholder='Task text' value={text} onChange={(e) => setText(e.target.value) }/>
             </div>
             <div className='form-control'>
-                <label htmlFor='day'>Day & Time</label>
+                <label>Day & Time</label>
                 <input type='text' id='day' name='day' placeholder='Day description' value={day} onChange={(e) => setDay(e.target.value) } />
             </div>
             <div className='form-control form-control-check'>
