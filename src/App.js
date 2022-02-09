@@ -32,7 +32,7 @@ const fetchTasks = async () => {
 
 //Fetch task
 const fetchTask = async (id) => {
-  const res = await fetch(`http://localhost:5000/tasks/${id}`)
+  const res = await fetch(`https://my-json-server.typicode.com/totbian/task-tracker-backend${id}`)
   const data = await res.json()
 
   return data
@@ -40,7 +40,7 @@ const fetchTask = async (id) => {
 
 //add new task
 const addTask = async (task) => {
-  const res = await fetch(`http://localhost:5000/tasks`, {
+  const res = await fetch(`https://my-json-server.typicode.com/totbian/task-tracker-backend`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -66,7 +66,7 @@ const addTask = async (task) => {
 
 // Delete task from backend JSON too
 const deleteTask = async (id) => {
-  await fetch(`http://localhost:5000/tasks/${id}`,{
+  await fetch(`https://my-json-server.typicode.com/totbian/task-tracker-backend${id}`,{
   method: 'DELETE'
   })
 
@@ -78,7 +78,7 @@ const toggleReminder = async (id) => {
   const taskToToggle = await fetchTask(id)
   const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
 
-  const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+  const res = await fetch(`https://my-json-server.typicode.com/totbian/task-tracker-backend${id}`, {
     method: 'PUT',
     headers: {
       'Content-type': 'application/json'
